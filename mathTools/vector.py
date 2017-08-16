@@ -41,5 +41,5 @@ class Vector3(object):
     def scale(self, x):
         return self.x * x + self.y * x + self.z * x
 
-    def asList(self):
+    def as_list(self):
         return [self.x, self.y, self.z]
