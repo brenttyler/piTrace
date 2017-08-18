@@ -43,3 +43,25 @@ class Vector3(object):
 
     def as_list(self):
         return [self.x, self.y, self.z]
+
+    def max_component(self):
+        return max(self.x, self.y, self.z)
+
+    def min_component(self):
+        return min(self.x, self.y, self.z)
+
+    def min_dimension(self):
+        if self.x < self.y and self.x < self.z:
+            return 0
+        if self.y < self.x and self.y < self.z:
+            return 1
+        if self.z < self.x and self.z < self.y:
+            return 2
+
+    def max_dimension(self):
+        if self.y < self.x and self.z < self.x:
+            return 0
+        if self.x < self.y and self.z < self.y:
+            return 1
+        if self.x < self.z and self.y < self.z:
+            return 2

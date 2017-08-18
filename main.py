@@ -1,6 +1,5 @@
 import mathTools
 
-v = mathTools.Vector3(1, 3, 8)
-v = v.normalize()
-
-print v
+a = mathTools.Point3(5,0,0)
+b = mathTools.Point3(0,0,0)
+print a.lerp(0.5, b)
