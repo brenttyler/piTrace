@@ -38,6 +38,7 @@ class Vector3(object):
         return abs(self.dot(other))
 
     def cross(self, other):
+        pass
 
     def scale(self, other):
         return Vector3(self.x * other, self.y * other )
