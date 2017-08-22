@@ -34,6 +34,14 @@ class Vector3(object):
     def dot(self, other):
         return (self.x * other.x) + (self.y * other.y) + (self.z * other.z)
 
+    def abs_dot(self, other):
+        return abs(self.dot(other))
+
+    def cross(self, other):
+
+    def scale(self, other):
+        return Vector3(self.x * other, self.y * other )
+
     def normalize(self):
         mag = math.sqrt((self.x * self.x) + (self.y * self.y) + (self.z * self.z))
         return Vector3(self.x / mag, self.y / mag, self.z / mag)
