@@ -3,9 +3,9 @@ import math
 
 class Vector3(object):
     def __init__(self, x, y, z):
-        self.x = x
-        self.y = y
-        self.z = z
+        self.x = float(x)
+        self.y = float(y)
+        self.z = float(z)
 
     def __repr__(self):
         return 'Vector3 <<{0}, {1}, {2}>>'.format(self.x, self.y, self.z)
@@ -38,10 +38,12 @@ class Vector3(object):
         return abs(self.dot(other))
 
     def cross(self, other):
-        pass
+        return Vector3((self.y * other.z) - (self.z * other.y),
+                       (self.z * other.x) - (self.x * other.z),
+                       (self.x * other.y) - (self.y * other.x))
 
     def scale(self, other):
-        return Vector3(self.x * other, self.y * other )
+        return Vector3(self.x * other, self.y * other, self.z * other)
 
     def normalize(self):
         mag = math.sqrt((self.x * self.x) + (self.y * self.y) + (self.z * self.z))

@@ -1,4 +1,4 @@
-
+import math
 from vector import Vector3
 
 
@@ -6,9 +6,9 @@ class Point3(object):
     """ Standard 3 dimensional point class """
 
     def __init__(self, x, y, z):
-        self.x = x
-        self.y = y
-        self.z = z
+        self.x = float(x)
+        self.y = float(y)
+        self.z = float(z)
 
     def __repr__(self):
         return 'Point3 <<{0}, {1}, {2}>>'.format(self.x, self.y, self.z)
@@ -65,3 +65,32 @@ class Point3(object):
 
     def to_vector3(self):
         return Vector3(self.x, self.y, self.z)
+
+    def min(self, other):
+        return Point3(min(self.x, other.x),
+                      min(self.y, other.y),
+                      min(self.z, other.z))
+
+    def max(self, other):
+        return Point3(max(self.x, other.x),
+                      max(self.y, other.y),
+                      max(self.z, other.z))
+
+    def __floor__(self):
+        return Point3(math.floor(self.x), math.floor(self.y), math.floor(self.z))
+
+    def floor(self):
+        return self.__floor__()
+
+    def __ceil__(self):
+        return Point3(math.ceil(self.x), math.ceil(self.y), math.ceil(self.z))
+
+    def ceil(self):
+        return self.__ceil__()
+
+    def __abs__(self):
+        return Point3(abs(self.x), abs(self.y), abs(self.z))
+
+    def abs(self):
+        return self.__abs__()
+
