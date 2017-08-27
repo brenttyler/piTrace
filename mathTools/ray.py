@@ -9,4 +9,3 @@ class Ray(object):
         self.tMax = float()
         self.time = float()
         self.medium = None
-
